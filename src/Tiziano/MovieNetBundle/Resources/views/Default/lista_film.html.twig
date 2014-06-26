@@ -1,0 +1,9 @@
+{% extends 'TizianoMovieNetBundle:Default:base.html.twig' %}
+{% block body %}
+	<h1>Lista film</h1>
+	<ul>
+		{% for m in movies %}
+			<li><a href="{{ path('dettaglio_film', { 'id': m.id }) }}">{{ m.titolo }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}

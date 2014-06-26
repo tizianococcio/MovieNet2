@@ -1,0 +1,41 @@
+home:
+    path:  /
+    defaults: { _controller: TizianoMovieNetBundle:Default:index }
+
+film_nuovo:
+    path: /nuovo/film
+    defaults: { _controller: TizianoMovieNetBundle:Default:nuovo }
+
+registi_nuovo:
+    path: /nuovo/regista
+    defaults: { _controller: TizianoMovieNetBundle:Registi:nuovo }
+
+genere_nuovo:
+    path: /nuovo/genere
+    defaults: { _controller: TizianoMovieNetBundle:Generi:nuovo }
+
+film:
+    path: /film
+    defaults: { _controller: TizianoMovieNetBundle:Default:lista }
+
+dettaglio_film:
+    path: /film/{id}
+    defaults: { _controller: TizianoMovieNetBundle:Default:dettaglio }
+    requirements:
+        id: \d+
+
+modifica_film:
+    path: /film/modifica/{id}
+    defaults: { _controller: TizianoMovieNetBundle:Default:modifica }
+    requirements:
+        id: \d+
+
+registi:
+    path: /registi/{id}
+    defaults: { _controller: TizianoMovieNetBundle:Default:registi, id: 1 }
+    requirements:
+        id: \d+
+
+upload_test:
+    path: /upload
+    defaults: { _controller: TizianoMovieNetBundle:Default:upload }

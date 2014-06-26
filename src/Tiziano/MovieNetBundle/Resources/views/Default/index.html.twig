@@ -1,0 +1,15 @@
+{% extends 'TizianoMovieNetBundle:Default:base.html.twig' %}
+{% block body %}
+	<h1>Benvenuto nell'applicazione MovieNet!</h1>
+	<p>
+		<h3>Ricerca</h3> 
+		{{ form(form_ricerca) }}
+		<p>Hai cercato <i>{{ dati.termine }}</i></p>
+	</p>
+	<ul>
+		{% for m in movies %}
+			<li><a href="{{ path('dettaglio_film', { 'id': m.id }) }}">{{ m.titolo }}</a></li>
+		{% endfor %}
+	</ul>		
+
+{% endblock %}

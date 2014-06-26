@@ -1,0 +1,7 @@
+parameters:
+#    tiziano_movie_net.example.class: Tiziano\MovieNetBundle\Example
+
+services:
+#    tiziano_movie_net.example:
+#        class: %tiziano_movie_net.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

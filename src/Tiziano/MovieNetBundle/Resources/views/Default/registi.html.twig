@@ -1,0 +1,8 @@
+<h1>Regista <b>{{ regista.name }}</b></h1>
+
+<p>Lista registi</p>
+<ul>
+{% for r in registi %}
+	<li>{{ r.name }}</li>
+{% endfor %}
+</ul>

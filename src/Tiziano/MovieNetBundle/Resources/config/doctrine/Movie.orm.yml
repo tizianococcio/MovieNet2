@@ -1,0 +1,78 @@
+Tiziano\MovieNetBundle\Entity\Movie:
+    type: entity
+    table: null
+    repositoryClass: Tiziano\MovieNetBundle\Entity\MovieRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titolo:
+            type: string
+            length: 255
+        sottotitolo:
+            type: string
+            length: 255
+            nullable: true
+        titoloOriginale:
+            type: string
+            length: 255
+            column: titolo_originale
+            nullable: true
+        supporto:
+            type: string
+            length: 255
+            nullable: true
+        tipoSupporto:
+            type: integer
+            column: tipo_supporto
+            nullable: true
+        lingua:
+            type: string
+            length: '20'
+            nullable: true
+        dataUscita:
+            type: datetime
+            column: data_uscita
+            nullable: true
+        cast:
+            type: text
+            nullable: true
+        trama:
+            type: text
+            nullable: true
+        durata:
+            type: string
+            length: '8'
+            nullable: true
+        locandina:
+            type: string
+            length: 255
+            nullable: true
+        visto:
+            type: boolean
+            nullable: true
+        idGenere:
+            type: integer
+            column: id_genere
+            nullable: true
+        idRegista:
+            type: integer
+            column: id_regista
+            nullable: true
+    manyToOne:
+        regista:
+            targetEntity: Director
+            inversedBy: movies
+            joinColumn:
+                name: id_regista
+                referencedColumnName: id
+        genere:
+            targetEntity: Genre
+            inversedBy: movies
+            joinColumn:
+                name: id_genere
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

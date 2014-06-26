@@ -1,0 +1,42 @@
+{% extends 'TizianoMovieNetBundle:Default:base.html.twig' %}
+{% block body %}
+	<h1>Dettaglio film</h1>
+	<p><a href="{{ path('modifica_film', {'id': movie.id }) }}">Modifica</a></p>
+	<p>
+		<table>
+			<tr>
+				<td>Titolo</td>
+				<td>{{ movie.titolo }}</td>
+			</tr>
+			<tr>
+				<td>Genere</td>
+				<td>{{ movie.genere }}</td>
+			</tr>
+			<tr>
+				<td>Regia</td>
+				<td>{{ movie.regista }}</td>
+			</tr>
+
+			<tr>
+				<td>Supporto</td>
+				<td>{{ movie.supporto }}</td>
+			</tr>
+			<tr>
+				<td>Lingua</td>
+				<td>{{ movie.lingua }}</td>
+			</tr>
+			<tr>
+				<td>Cast</td>
+				<td>{{ movie.cast|convert_encoding('iso-8859-1', 'UTF-8') }}</td>
+			</tr>
+			{% if movie.locandina %}
+				<tr>
+					<td>Locandina</td>
+					<td>
+						<img src="{{ asset('images/locandine/' ~ movie.locandina) }}">
+					</td>
+				</tr>
+			{% endif %}
+		</table>
+	</p>
+{% endblock %}

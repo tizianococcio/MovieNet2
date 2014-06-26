@@ -1,0 +1,4 @@
+tiziano_movie_net:
+    resource: "@TizianoMovieNetBundle/Resources/config/routing.yml"
+    prefix:   /
+
